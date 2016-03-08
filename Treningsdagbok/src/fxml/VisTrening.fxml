@@ -6,14 +6,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane prefHeight="400.0" prefWidth="600.0">
+      <Pane prefHeight="600.0" prefWidth="800.0">
          <children>
-            <ComboBox layoutX="56.0" layoutY="67.0" prefWidth="150.0" promptText="Velg treningsøkt" />
-            <Text layoutX="56.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vis treningsøkt" />
-            <TextArea editable="false" layoutX="43.0" layoutY="121.0" prefHeight="200.0" prefWidth="514.0" />
+            <ComboBox layoutX="14.0" layoutY="117.0" prefWidth="150.0" promptText="Velg treningsøkt" />
+            <Text layoutX="14.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 64;" text="Vis treningsøkt" />
+            <TextArea editable="false" layoutX="14.0" layoutY="164.0" prefHeight="415.0" prefWidth="760.0" />
          </children>
       </Pane>
    </children>
