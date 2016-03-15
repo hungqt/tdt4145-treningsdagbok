@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WelcomeController">
    <children>
       <Label layoutX="203.0" layoutY="58.0" prefHeight="93.0" prefWidth="415.0" text="VELKOMMEN">
          <font>
@@ -23,22 +23,22 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Button layoutX="273.0" layoutY="213.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="274.0" text="Ny Øvelse" textFill="RED">
+      <Button fx:id="btnNyOv" layoutX="273.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleNyOvelse" prefHeight="48.0" prefWidth="274.0" text="Ny Øvelse" textFill="RED">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Button>
-      <Button layoutX="273.0" layoutY="281.0" mnemonicParsing="false" text="Registrer Treniningsøkt" textFill="#2200ff">
+      <Button fx:id="btnRegTren" layoutX="273.0" layoutY="281.0" mnemonicParsing="false" onAction="#handleRegistrerTreningsokt" text="Registrer Treniningsøkt" textFill="#2200ff">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Button>
-      <Button layoutX="273.0" layoutY="350.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="274.0" text="Tidligere Treningsøkter" textFill="#11fc09">
+      <Button fx:id="btnTidligereTren" layoutX="273.0" layoutY="350.0" mnemonicParsing="false" onAction="#handleTidligereTreningsokter" prefHeight="48.0" prefWidth="274.0" text="Tidligere Treningsøkter" textFill="#11fc09">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Button>
-      <Button layoutX="273.0" layoutY="419.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="274.0" text="Slett Øvelse" textFill="#f800ec">
+      <Button fx:id="btnSlettOv" layoutX="273.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleSlettOving" prefHeight="48.0" prefWidth="274.0" text="Slett Øvelse" textFill="#f800ec">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
