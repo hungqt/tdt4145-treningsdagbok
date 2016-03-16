@@ -2,6 +2,7 @@
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -19,6 +20,9 @@ public class NyOvelseController {
 	@FXML
 	private Button btnTilbake;
 	
+	@FXML
+	private ComboBox cat;
+	
 	// Refererer til Main
 	private Main main;
 	/**
@@ -35,17 +39,24 @@ public class NyOvelseController {
 	
 	@FXML
 	public void handleLagre() {
-		
+		DBConnector dbcon = new DBConnector();
+		dbcon.setExercise(handleNavn(), handleBeskrivelse(), handleCombo(dbcon));
 	}
 	
 	@FXML
-	public void handleNavn() {
-		
+	public String handleNavn() {
+		return "hei";
 	}
 	
 	@FXML
-	public void handleBeskrivelse() {
-		
+	public String handleBeskrivelse() {
+		return "hei";
+	}
+	
+	@FXML
+	public String handleCombo(DBConnector dbcon) {
+		cat.setItems(dbcon.getCategory());
+		return "hei";
 	}
 	
 }
