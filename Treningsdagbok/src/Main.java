@@ -135,16 +135,18 @@ public class Main extends Application {
 	    try {
 	        // Load user view.
 		    FXMLLoader loader = new FXMLLoader();
-		    loader.setLocation(Main.class.getResource("fxml/addExerciseToSessionView.fxml"));
+		    loader.setLocation(Main.class.getResource("fxml/AddExerciseToSessionView.fxml"));
 		    AnchorPane userView = (AnchorPane) loader.load();
 		
 		    // Set user view into the center of root layout.
 		    rootLayout.setCenter(userView);
 		    
 		    //Kobler UserViewController med Main
-		    AddExerciseController controller = new AddExerciseController(TS);
-		    
-		    controller = loader.getController();
+		    System.out.println("Kommer hit");
+		    AddExerciseController controller = loader.getController();
+		    System.out.println("Kommer hit og");
+		    controller.setMain(this);
+		    controller.init(TS);
 	        
 	    } catch (IOException e) {
 	        e.printStackTrace();
