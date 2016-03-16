@@ -1,9 +1,10 @@
 import javafx.fxml.FXML;
- import javafx.scene.control.DatePicker;
- import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
  
  public class AddTrainingSessionController {
- 	
+	
  	private Main main;
  	private TrainingSession trainingSession;
  	
@@ -19,6 +20,9 @@ import javafx.fxml.FXML;
  	@FXML
  	TextField personligForm;
  	
+ 	@FXML
+ 	Button btnLegOv;	
+ 	
  	public void setMain(Main main){
  		this.main = main;
  	}
@@ -32,5 +36,11 @@ import javafx.fxml.FXML;
  		trainingSession = new TrainingSession(dateString, startTime, duration, shape);
  		
  		return trainingSession;
+ 	}
+ 	
+ 	@FXML
+ 	public void showAddExercises(){
+ 		System.out.println("test");
+ 		main.showAddExerciseToSession(getTrainingSessionInfo());
  	}
  }
