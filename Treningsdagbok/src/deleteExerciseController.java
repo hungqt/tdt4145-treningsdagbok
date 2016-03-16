@@ -13,9 +13,12 @@ public class deleteExerciseController {
 	@FXML
 	private Button btnDelete;
 	
+	DBConnector db = new DBConnector();
+	
 	public void FillComboBox(){
-		List<String> exercises = new ArrayList<String>(); // Need method for adding exercises
+		List<String> exercises = db.getExerciseList(); // Need method for adding exercises
 		cmbDelete.getItems().clear();
+		cmbDelete.setValue(exercises.get(0));
 		for(String exercise: exercises){
 			cmbDelete.getItems().add(exercise);
 		}
@@ -24,6 +27,11 @@ public class deleteExerciseController {
 	@FXML
 	public void deleteObject(){
 		String value = (String)cmbDelete.getValue();
-		//Delete using DB method
+		if(!db.exerciseInSession(value)){
+			db.deleteExercise(value);
+		}
+		else{
+			throw new IllegalArgumentException("Denne øvelsen finnes i flere treningsøkter og kan ikke fjernes");
+		}
 	}
 }
