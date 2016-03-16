@@ -202,6 +202,25 @@ public class DBConnector {
 	}
 
 	
+	//Sjekker om det finnes en bruker med dette brukernavnet i databasen
+		public boolean exerciseInSession(String exercise){
+			boolean inSide = false;
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+				Connection con = DriverManager.getConnection("jdbc:mysql://mysql.stud.ntnu.no/thomborr_bruker","thomborr_login","12345");
+				PreparedStatement statement = (PreparedStatement) con.prepareStatement("SELECT name FROM EXECUTEDEXERCISE WHERE name = ?");
+				statement.setString(1, exercise);
+				ResultSet result = statement.executeQuery();
+				if(result.first()){
+					inSide = true;
+				}
+				con.close();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return inSide;
+		}
 	public List<String> getTrainingSessionList(){
 		List<String> trainingSessionList = new ArrayList<String>();
 		
