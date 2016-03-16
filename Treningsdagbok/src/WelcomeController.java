@@ -10,8 +10,9 @@ public class WelcomeController {
 	private Button btnRegTren;
 	@FXML
 	private Button btnTidligereTren;
+	
 	@FXML
-	private Button btnSlettOv;
+	private Button btnSlett;
 	
 	// Refererer til Main
 	private Main main;
@@ -29,7 +30,7 @@ public class WelcomeController {
 	
 	@FXML
 	public void handleRegistrerTreningsokt() {
-		
+		main.showAddTrainingSession();
 	}
 	
 	@FXML
@@ -39,7 +40,8 @@ public class WelcomeController {
 	}
 	
 	@FXML
-	public void handleSlettOving() {
-		
+	public void handleSlett() {
+		System.out.println("Yo");
+		main.showDeleteExercise();
 	}
 }
