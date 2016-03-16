@@ -10,17 +10,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="showSessionsController">
    <children>
       <Pane prefHeight="600.0" prefWidth="800.0">
          <children>
-            <ComboBox fx:id="cmbTrening" layoutX="325.0" layoutY="139.0" prefWidth="150.0" promptText="Velg treningsøkt" />
+            <ComboBox fx:id="cmbTrening" layoutX="325.0" layoutY="139.0" onAction="#handleVelgTrening" prefWidth="150.0" promptText="Velg treningsøkt" />
             <Text layoutX="189.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 64;" text="Vis treningsøkt" />
-            <TextField fx:id="txtTidspunkt" layoutX="307.0" layoutY="206.0" />
-            <TextField fx:id="txtVarighet" layoutX="307.0" layoutY="256.0" />
-            <TextArea fx:id="txtInfo" layoutX="181.0" layoutY="322.0" prefHeight="231.0" prefWidth="438.0" />
-            <Label layoutX="231.0" layoutY="211.0" text="Tidspunkt:" />
-            <Label layoutX="240.0" layoutY="261.0" text="Varighet:" />
+            <TextArea fx:id="txtInfo" layoutX="207.0" layoutY="217.0" prefHeight="281.0" prefWidth="400.0" />
+            <Button fx:id="tilbake" layoutX="207.0" layoutY="534.0" mnemonicParsing="false" onAction="#handleTilbake" text="Tilbake" />
          </children>
       </Pane>
    </children>
