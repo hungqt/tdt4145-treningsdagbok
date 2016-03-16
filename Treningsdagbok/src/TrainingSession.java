@@ -14,5 +14,20 @@ public class TrainingSession {
 		this.shape = shape;
 	}
 	
+	public String getDate(){
+		return date;
+	}
+	
+	public String getStartTime(){
+		return startTime;
+	}
+	
+	public String getDuration(){
+		return duration;
+	}
+	
+	public String getShape(){
+		return shape;
+	}
 	
 }

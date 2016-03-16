@@ -17,8 +17,8 @@
             </Text>
             <ComboBox fx:id="cmbExercises" layoutX="325.0" layoutY="139.0" prefWidth="150.0" promptText="Velg øvelse..." />
             <TextField fx:id="comment" layoutX="326.0" layoutY="194.0" promptText="Kommentar/resultat" />
-            <Button fx:id="btnAnotherOne" layoutX="337.0" layoutY="251.0" mnemonicParsing="false" text="Another one (øvelse)" />
-            <Button fx:id="btnDone" layoutX="347.0" layoutY="315.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="107.0" text="Ferdig" />
+            <Button fx:id="btnAnotherOne" layoutX="337.0" layoutY="251.0" mnemonicParsing="false" onAction="#anotherExercise" text="Another one (øvelse)" />
+            <Button fx:id="btnDone" layoutX="347.0" layoutY="315.0" mnemonicParsing="false" onAction="#sendInSession" prefHeight="66.0" prefWidth="107.0" text="Ferdig" />
          </children>
       </Pane>
    </children>

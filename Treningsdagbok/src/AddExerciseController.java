@@ -19,7 +19,7 @@ public class AddExerciseController {
 	private ComboBox<String> cmbExercises;
 	
 	@FXML
-	private TextField comment;
+	private TextField comment;	
 	
 	@FXML
 	private Button btnAnotherOne;
@@ -30,6 +30,8 @@ public class AddExerciseController {
 	@FXML
 	private TextField personligForm;
 	
+	private List<String> exerciseList;
+	private List<String> resultList;
 	
 	public void setMain(Main main){
 		this.main = main;
@@ -55,5 +57,19 @@ public class AddExerciseController {
 		System.out.println("etter for-løkke");
 	}
 	
+	public void anotherExercise(){
+		exerciseList.add(cmbExercises.getValue().toString());
+		resultList.add(comment.getText().toString());
+		comment.setText("");
+	}
+	
+	public void sendInSession(){
+		db.setTrainingSession(trainingSession.getDate(), trainingSession.getStartTime(), trainingSession.getDuration(), null, trainingSession.getShape(), null, null);
+		for(int i=0; i<exerciseList.size(); i++){
+			db.setExecutedExercise(exerciseList.get(i), trainingSession.getDate(), trainingSession.getStartTime(), resultList.get(i));
+		}
+		
+		main.showVelkommen();
+	}
 	
 }
