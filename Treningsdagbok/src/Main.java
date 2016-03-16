@@ -92,6 +92,28 @@ public class Main extends Application {
 	        e.printStackTrace();
 	    }
 	}
+
+	
+	public void showVisTrening(){
+		
+	    try {
+	        // Load user view.
+	    FXMLLoader loader = new FXMLLoader();
+	    loader.setLocation(Main.class.getResource("fxml/VisTrening.fxml"));
+	    AnchorPane userView = (AnchorPane) loader.load();
+	
+	    // Set user view into the center of root layout.
+	    rootLayout.setCenter(userView);
+	    
+	    //Kobler UserViewController med Main
+        showSessionsController controller = loader.getController();
+        controller.setMain(this);
+        controller.init();
+	    }catch (IOException e) {
+	        e.printStackTrace();
+	    }
+}
+
 	public void showDeleteExercise(){
 		
 	    try {
@@ -100,6 +122,7 @@ public class Main extends Application {
 		    loader.setLocation(Main.class.getResource("fxml/deleteExercise.fxml"));
 		    AnchorPane userView = (AnchorPane) loader.load();
 		    System.out.println("Hello");
+		    rootLayout.setCenter(userView);
 		    
 		    deleteExerciseController controller = loader.getController();
 		    controller.setMain(this);
