@@ -10,21 +10,18 @@ import javafx.scene.control.TextField;
 public class AddExerciseController {
 	
 	private TrainingSession trainingSession;
+	// Refererer til Main
+	private Main main;
+		
 	
 	public AddExerciseController(TrainingSession trainingSession){
 		System.out.println("går inn i konstruktør");
 		this.trainingSession = trainingSession;
 		System.out.println("constructor ok");
+		this.main = main;
+		System.out.println("main ok");
+		this.init();
 	}
-	
-	// Refererer til Main
-		private Main main;
-		/**
-		 * @param main Main-instansen som instansierer denne og som inneholder metodene for å bytte til de andre viewene.
-		 */
-		public void setMain(Main main) {
-			this.main = main;
-		}
 	
 	DBConnector db = new DBConnector();
 	
@@ -43,13 +40,21 @@ public class AddExerciseController {
 	@FXML
 	private TextField personligForm;
 	
+	public void init(){
+		FillComboBox();
+	}
+	
 	public void FillComboBox(){
+		System.out.println("Kjører FillComboBox");
 		List<String> exercises = db.getExerciseList(); // Need method for adding exercises
-		cmbExercises.getItems().clear();
+		System.out.println("etter liste-laging");
+		System.out.println(exercises);
 		cmbExercises.setValue(exercises.get(0));
+		System.out.println("før for-løkke");
 		for(String exercise: exercises){
 			cmbExercises.getItems().add(exercise);
 		}
+		System.out.println("etter for-løkke");
 	}
 	
 	

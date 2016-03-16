@@ -168,10 +168,6 @@ public class Main extends Application {
 		    AddExerciseController controller = new AddExerciseController(TS);
 		    
 		    controller = loader.getController();
-		    System.out.println("før setmainer");
-		    controller.setMain(this);
-		    System.out.println("har setmainet");
-
 	        
 	    } catch (IOException e) {
 	        e.printStackTrace();
