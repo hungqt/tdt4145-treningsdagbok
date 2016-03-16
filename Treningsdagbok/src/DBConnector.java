@@ -91,7 +91,7 @@ public class DBConnector {
 		}	
 	}
 	
-	public void setTrainingSession(String date, String startTime, String duration, String shape){
+	public void setTrainingSession(String date, String startTime, String duration, String shape, String performance, String name){
 		try{
 			Class.forName("com.mysql.jdbc.Driver");			
 		} catch (ClassNotFoundException e) {
@@ -104,12 +104,12 @@ public class DBConnector {
 			System.out.println("Connected, bitch");
 			
 			System.out.println("Creating a statement");
-			PreparedStatement stmt = (PreparedStatement) conn.prepareStatement("insert into EXCERCISE(NAME, DESCRIPTION, CATEGORY) values(?,?,?)");
+			PreparedStatement stmt = (PreparedStatement) conn.prepareStatement("insert into TRAININGSESSION(DATE, TIME, DURATION, NOTE, FORM, PERFORMANCE, NAME) values(?,?,?,?,?,?,?)");
 			System.out.println("Statement created");
 			
-			stmt.setString(1, name);
-			stmt.setString(2, description);
-			stmt.setString(3, category);
+			stmt.setString(1, date);
+			stmt.setString(2, startTime);
+			stmt.setString(3, duration);
 			stmt.executeUpdate();
 			System.out.println("OK");
 			
