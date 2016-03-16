@@ -10,7 +10,7 @@
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
    <children>
       <Pane prefHeight="600.0" prefWidth="800.0">
-         <children> 
+         <children>
             <Text layoutX="306.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Øvelse">
                <font>
                   <Font size="64.0" />

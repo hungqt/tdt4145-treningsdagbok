@@ -113,8 +113,6 @@ public class DBConnector {
 			stmt.setString(3, duration);
 			stmt.setString(4, note);
 			stmt.setString(5, form);
-			stmt.setString(6, performance);
-			stmt.setString(7, name);
 			stmt.executeUpdate();
 			System.out.println("OK");
 			
