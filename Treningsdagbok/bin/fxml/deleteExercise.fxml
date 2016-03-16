@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="239.0" layoutY="82.0" text="Slett øvelse">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbDelete" layoutX="325.0" layoutY="245.0" prefWidth="150.0" />
+      <Button fx:id="btnDelete" layoutX="368.0" layoutY="359.0" mnemonicParsing="false" text="Delete" />
+   </children>
+</AnchorPane>

@@ -4,12 +4,12 @@ INDEX VERSION 1.127+C:\Users\hqthi\Google Drive\NTNU\4Semester\Datamod Database\
 1250592570.index
 4160179269.index
 1230307551.index
-1042840505.index
+1718475615.index
+793912968.index
 1216683187.index
+1042840505.index
 223293647.index
 2510163223.index
-793912968.index
-1718475615.index
 2667831626.index
 378437435.index
 2643100498.index
@@ -17,4 +17,5 @@ INDEX VERSION 1.127+C:\Users\hqthi\Google Drive\NTNU\4Semester\Datamod Database\
 528963955.index
 3766815368.index
 907486336.index
+3950688284.index
 4193685296.index
