@@ -254,8 +254,8 @@ public class DBConnector {
 		
 	}
 	
-	public List<String> getExecutedExercise(String date){
-		List<String> trainingSessionList = new ArrayList<String>();
+	public List<String> getCategory(){
+		List<String> categoryList = new ArrayList<String>();
 		
 		try {
 			//STEP 2: Register JDBC driver
@@ -278,7 +278,7 @@ public class DBConnector {
 			
 			//Writing the SQL query
 			System.out.println("SQL stuff");
-			String sql = "SELECT * FROM T";
+			String sql = "SELECT * FROM CATEGORY";
 			System.out.println("SQL stuff sucessfull");
 			
 			//Execute the SQL query
@@ -288,8 +288,8 @@ public class DBConnector {
 			
 			//Loop through column to find whatever
 			while(rs.next()){
-				String trainingSession = rs.getString("DATE");
-				trainingSessionList.add(trainingSession);	
+				String category = rs.getString("NAME");
+				categoryList.add(category);	
 			}
 			
 			//Clean-up environment
@@ -302,8 +302,9 @@ public class DBConnector {
 			e.printStackTrace();
 		}
 		
-		return trainingSessionList;
-		
+		return categoryList;
 	}
+	
+	
 }
 
