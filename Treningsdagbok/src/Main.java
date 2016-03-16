@@ -71,31 +71,31 @@ public class Main extends Application {
         }
     }
 
-public void showNyOvelse(){
+	public void showNyOvelse(){
+		
+	    try {
+	        // Load user view.
+	    FXMLLoader loader = new FXMLLoader();
+	    loader.setLocation(Main.class.getResource("fxml/NyOvelse.fxml"));
+	    AnchorPane userView = (AnchorPane) loader.load();
 	
-    try {
-        // Load user view.
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("fxml/NyOvelse.fxml"));
-        AnchorPane userView = (AnchorPane) loader.load();
-
-        // Set user view into the center of root layout.
-        rootLayout.setCenter(userView);
-        
-        //Kobler UserViewController med Main
-        NyOvelseController controller = loader.getController();
-        controller.setMain(this);
-        
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-}
-    
-    /**
-     * launcher programmet
-     * @param args
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
+	    // Set user view into the center of root layout.
+	    rootLayout.setCenter(userView);
+	    
+	    //Kobler UserViewController med Main
+	        NyOvelseController controller = loader.getController();
+	        controller.setMain(this);
+	        
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+	    
+	    /**
+	 * launcher programmet
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	    launch(args);
+	}
 }

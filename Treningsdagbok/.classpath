@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-<<<<<<< HEAD
-	<classpathentry excluding="src/" kind="src" path=""/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_60"/>
 	<classpathentry kind="lib" path="C:/Users/Simon/Downloads/documents-export-2015-10-02/mysql-connector-java-5.0.8-bin.jar"/>
-=======
-	<classpathentry kind="lib" path="C:/Users/hqthi/Google Drive/NTNU/4Semester/Datamod Database/tdt4145-treningsdagbok/Treningsdagbok/mysql-connector-java-5.0.8-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/tamhu/Desktop/Projects/tdt4145-treningsdagbok/Treningsdagbok/mysql-connector-java-5.0.8-bin.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
->>>>>>> b3d88cc76540ef5e7022f91112f1cc5fbc194a75
 	<classpathentry kind="output" path="bin"/>
 </classpath>

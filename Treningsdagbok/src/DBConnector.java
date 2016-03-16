@@ -199,20 +199,8 @@ public class DBConnector {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-<<<<<<< HEAD:Treningsdagbok/src/DBConnector.java
+	}
 
-		
-	}
-	public static void main(String[] args) {
-		DBConnector test = new DBConnector();
-//		test.deleteExercise("asd");
-//		System.out.println(test.getExerciseList());
-		test.setExercise("Biceps curl", "curls for the gurls", "Styrketrening");
-	}
-	
-}
-=======
-	}	
 	
 	public List<String> getTrainingSessionList(){
 		List<String> trainingSessionList = new ArrayList<String>();
@@ -318,4 +306,4 @@ public class DBConnector {
 		
 	}
 }
->>>>>>> b3d88cc76540ef5e7022f91112f1cc5fbc194a75:Treningsdagbok/src/treningsdagbok/DBConnector.java
+
