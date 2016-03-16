@@ -12,18 +12,6 @@ public class AddExerciseController {
 	private TrainingSession trainingSession;
 	// Refererer til Main
 	private Main main;
-<<<<<<< HEAD
-=======
-		
-	
-	public AddExerciseController(TrainingSession trainingSession){
-		System.out.println("går inn i konstruktør");
-		this.trainingSession = trainingSession;
-		System.out.println("constructor ok");
-		this.main = main;
-		System.out.println("main ok");
-	}
->>>>>>> 67a624584ebd3e8442c80eeaddb7b68ffeb33720
 	
 	DBConnector db = new DBConnector();
 	

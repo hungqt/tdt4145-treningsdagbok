@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
  	DatePicker dato;
  	
  	@FXML
- 	TextField tid; 
+ 	TextField tid;
  	
  	@FXML
  	TextField varighet;
