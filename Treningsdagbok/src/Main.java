@@ -100,14 +100,54 @@ public class Main extends Application {
 		    loader.setLocation(Main.class.getResource("fxml/deleteExercise.fxml"));
 		    AnchorPane userView = (AnchorPane) loader.load();
 		    System.out.println("Hello");
+		    
+		    deleteExerciseController controller = loader.getController();
+		    controller.setMain(this);
+		    controller.init();
+	    	}
+	    catch(Exception e){
+	    	e.printStackTrace();
+	    	}
+		}
+	
+	public void showAddTrainingSession(){
+	    try {
+	        // Load user view.
+		    FXMLLoader loader = new FXMLLoader();
+		    System.out.println("showAddTrainingSession");
+		    loader.setLocation(Main.class.getResource("fxml/AddTrainingSessionView.fxml"));
+		    AnchorPane userView = (AnchorPane) loader.load();
 		
 		    // Set user view into the center of root layout.
 		    rootLayout.setCenter(userView);
 		    
 		    //Kobler UserViewController med Main
-		    deleteExerciseController controller = loader.getController();
+		    AddTrainingSessionController controller = loader.getController();
 		    controller.setMain(this);
-		    controller.init();
+		    
+	        
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+	
+	public void showAddExerciseToSession(TrainingSession TS){
+	    try {
+	        // Load user view.
+		    FXMLLoader loader = new FXMLLoader();
+		    loader.setLocation(Main.class.getResource("fxml/addExerciseToSessionView.fxml"));
+		    AnchorPane userView = (AnchorPane) loader.load();
+		
+		    // Set user view into the center of root layout.
+		    rootLayout.setCenter(userView);
+		    
+		    //Kobler UserViewController med Main
+		    AddExerciseController controller = new AddExerciseController(TS);
+		    
+		    controller = loader.getController();
+		    System.out.println("før setmainer");
+		    controller.setMain(this);
+		    System.out.println("har setmainet");
 	        
 	    } catch (IOException e) {
 	        e.printStackTrace();

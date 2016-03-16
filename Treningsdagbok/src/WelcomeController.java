@@ -30,7 +30,7 @@ public class WelcomeController {
 	
 	@FXML
 	public void handleRegistrerTreningsokt() {
-		
+		main.showAddTrainingSession();
 	}
 	
 	@FXML
