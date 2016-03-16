@@ -1,0 +1,15 @@
+import java.util.Date;
+
+public class TrainingSession {
+	
+	Date date;
+	String startTime;
+	String duration;
+	
+	
+	public TrainingSession(){
+		
+	}
+	
+	
+}

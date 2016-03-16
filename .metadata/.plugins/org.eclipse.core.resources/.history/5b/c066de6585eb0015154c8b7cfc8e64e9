@@ -1,0 +1,24 @@
+import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
+
+public class AddTrainingSessionController {
+	
+	private Main main;
+	
+	@FXML
+	DatePicker dato;
+	
+	@FXML
+	TextField tid; 
+	
+	@FXML
+	TextField varighet;
+	
+	@FXML
+	TextField personligForm;
+	
+	public void setMain(Main main){
+		this.main = main;
+	}
+}

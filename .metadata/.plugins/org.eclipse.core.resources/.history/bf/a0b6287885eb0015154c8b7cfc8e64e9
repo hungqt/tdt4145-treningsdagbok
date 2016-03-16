@@ -1,0 +1,35 @@
+import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
+
+public class AddTrainingSessionController {
+	
+	private Main main;
+	private TrainingSession trainingSession;
+	
+	@FXML
+	DatePicker dato;
+	
+	@FXML
+	TextField tid; 
+	
+	@FXML
+	TextField varighet;
+	
+	@FXML
+	TextField personligForm;
+	
+	public void setMain(Main main){
+		this.main = main;
+	}
+	
+	@FXML
+	public TrainingSession getTrainingSessionInfo(){
+		String datoString = dato.toString();
+		String startTid = tid.toString();
+		String duration = varighet.toString();
+		String shape = personligForm.toString();
+		
+		return trainingSession;
+	}
+}
