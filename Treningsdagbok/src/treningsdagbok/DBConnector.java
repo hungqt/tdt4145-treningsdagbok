@@ -87,6 +87,7 @@ public class DBConnector {
 			System.out.println("OK");
 			
 		} catch (SQLException e) {
+			System.out.println("exist");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
@@ -149,5 +150,55 @@ public class DBConnector {
 		}
 	}
 	
+	
+	public void deleteExercise(String name){
+		
+		try {
+			//STEP 2: Register JDBC driver
+		    try {
+				Class.forName("com.mysql.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		    //Make a database connection
+			System.out.println("Connectiing to database...");
+			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			System.out.println("Connected, bitch");
+			
+			//Create a statement
+			System.out.println("Creating a statement");
+			Statement stmt = conn.createStatement();
+			System.out.println("Statement created");
+			
+			//Writing the SQL query
+			System.out.println("SQL stuff");
+			String sql = "delete from EXCERCISE where EXCERCISE.NAME = '"+name+"'";
+			System.out.println("SQL stuff sucessfull");
+			
+			//Execute the SQL query
+			System.out.println("Before result set");
+			stmt.executeUpdate(sql);
+			System.out.println("ResultSet sucessfull");
+			
+			
+			//Clean-up environment
+		    stmt.close();
+		    conn.close();
+		    System.out.println("asd");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	public static void main(String[] args) {
+		DBConnector test = new DBConnector();
+//		test.deleteExercise("asd");
+//		System.out.println(test.getExerciseList());
+		test.setExercise("Biceps curl", "curls for the gurls", "Styrketrening");
+	}
 	
 }

@@ -6,6 +6,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
 public class deleteExerciseController {
+	
+	DBConnector db = new DBConnector();
+	
 	@FXML
 	private ComboBox<String> cmbDelete;
 	
@@ -13,7 +16,7 @@ public class deleteExerciseController {
 	private Button btnDelete;
 	
 	public void FillComboBox(){
-		List<String> exercises = new ArrayList<String>(); // Need method for adding exercises
+		List<String> exercises = db.getExerciseList(); // Need method for adding exercises
 		cmbDelete.getItems().clear();
 		for(String exercise: exercises){
 			cmbDelete.getItems().add(exercise);

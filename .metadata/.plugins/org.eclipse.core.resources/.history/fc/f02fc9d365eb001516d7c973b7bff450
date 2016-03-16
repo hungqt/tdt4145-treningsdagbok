@@ -91,7 +91,7 @@ public class DBConnector {
 		}	
 	}
 	
-	public void setTrainingSession(String date, String startTime, String duration, String shape){
+	/*public void setTrainingSession(String date, String startTime, String duration, String shape){
 		try{
 			Class.forName("com.mysql.jdbc.Driver");			
 		} catch (ClassNotFoundException e) {
@@ -117,7 +117,7 @@ public class DBConnector {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	public static void main(String[] args) {
 		DBConnector test = new DBConnector();
