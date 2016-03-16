@@ -85,7 +85,6 @@ public class AddExerciseController {
 		alert.setContentText("Session was added!");
 		alert.showAndWait();
 		main.showVelkommen();
-		main.showVelkommen();
 	}
 	
 }
