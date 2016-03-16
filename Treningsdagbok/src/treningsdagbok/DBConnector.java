@@ -192,12 +192,5 @@ public class DBConnector {
 			e.printStackTrace();
 		}
 	}
-	public static void main(String[] args) {
-		DBConnector test = new DBConnector();
-//		test.deleteExercise("asd");
-//		System.out.println(test.getExerciseList());
-		//test.setExercise("Biceps curl", "curls for the gurls", "Styrketrening");
-	
-	}
 	
 }
