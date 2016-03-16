@@ -1,17 +1,23 @@
 package treningsdagbok;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
-public class WelcomeController {
+public class NyOvelseController {
 	
 	@FXML
-	private Button btnNyOv;
+	private TextField txtNavn;
+	
 	@FXML
-	private Button btnRegTren;
+	private TextArea txtBeskrivelse;
+	
 	@FXML
-	private Button btnTidligereTren;
+	private Button btnLagre;
+	
 	@FXML
-	private Button btnSlettOv;
+	private Button btnTilbake;
 	
 	// Refererer til Main
 	private Main main;
@@ -23,22 +29,23 @@ public class WelcomeController {
 	}
 	
 	@FXML
-	public void handleNyOving() {
+	public void handleTilbake() {
 		
 	}
 	
 	@FXML
-	public void handleRegistrerTreningsokt() {
+	public void handleLagre() {
 		
 	}
 	
 	@FXML
-	public void handleTidligereTreningsokter() {
+	public void handleNavn() {
 		
 	}
 	
 	@FXML
-	public void handleSlettOving() {
+	public void handleBeskrivelse() {
 		
 	}
+	
 }

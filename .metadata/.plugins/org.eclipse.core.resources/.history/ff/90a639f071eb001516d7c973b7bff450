@@ -19,11 +19,6 @@ public class AddTrainingSessionController {
 	@FXML
 	TextField performance;
 	
-	String dateString;
-	String startTimeString;
-	String shapeString;
-	String performanceString;
-	
 	public void setMain(Main main) {
 		try{
 			this.main = main;
@@ -34,10 +29,6 @@ public class AddTrainingSessionController {
 	
 	public void getTrainingSessionInfo(){
 		
-		dateString = date.toString();
-		startTimeString = startTime.toString();
-		shapeString = shape.toString();
-		performanceString = performance.toString();
 	}
 	
 }

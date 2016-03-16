@@ -10,15 +10,6 @@ public class AddTrainingSessionController {
 	Main main;
 	DBConnector dbc = new DBConnector();
 	
-	@FXML
-	Date date;	
-	@FXML
-	TextField startTime;
-	@FXML
-	TextField shape;
-	@FXML
-	TextField performance;
-	
 	String dateString;
 	String startTimeString;
 	String shapeString;
@@ -33,6 +24,14 @@ public class AddTrainingSessionController {
 	}
 	
 	public void getTrainingSessionInfo(){
+		@FXML
+		Date date;	
+		@FXML
+		TextField startTime;
+		@FXML
+		TextField shape;
+		@FXML
+		TextField performance;
 		
 		dateString = date.toString();
 		startTimeString = startTime.toString();

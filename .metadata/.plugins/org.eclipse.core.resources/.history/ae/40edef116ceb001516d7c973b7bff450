@@ -12,10 +12,6 @@ public class DBConnector {
 	static final String USER = "thomborr_login";
 	static final String PASS = "12345";
 	
-	public DBConnector(){
-		
-	}
-	
 	public List<String> getExerciseList(){
 		List<String> exerciseList = new ArrayList<String>();
 		
@@ -156,6 +152,11 @@ public class DBConnector {
 			e.printStackTrace();
 		}
 	}
+	public static void main(String[] args) {
+		DBConnector test = new DBConnector();
+		System.out.println(test.getExerciseList());
+		//test.setExercise("Biceps curl", "curls for the gurls", "Styrketrening");
 	
+	}
 	
 }

@@ -12,9 +12,18 @@ public class WelcomeController {
 	@FXML
 	private Button btnSlettOv;
 	
+	// Refererer til Main
+	private Main main;
+	/**
+	 * @param main Main-instansen som instansierer denne og som inneholder metodene for å bytte til de andre viewene.
+	 */
+	public void setMain(Main main) {
+		this.main = main;
+	}
+	
 	@FXML
-	public void handleNyOving() {
-		
+	public void handleNyOvelse() {
+		main.showNyOvelse();
 	}
 	
 	@FXML
@@ -31,4 +40,6 @@ public class WelcomeController {
 	public void handleSlettOving() {
 		
 	}
+
+	
 }
