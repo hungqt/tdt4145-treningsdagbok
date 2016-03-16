@@ -15,6 +15,19 @@ public class deleteExerciseController {
 	
 	DBConnector db = new DBConnector();
 	
+	public void init(){
+		FillComboBox();
+	}
+	
+	// Refererer til Main
+	private Main main;
+	/**
+	 * @param main Main-instansen som instansierer denne og som inneholder metodene for å bytte til de andre viewene.
+	 */
+	public void setMain(Main main) {
+		this.main = main;
+	}
+	
 	public void FillComboBox(){
 		List<String> exercises = db.getExerciseList(); // Need method for adding exercises
 		cmbDelete.getItems().clear();
