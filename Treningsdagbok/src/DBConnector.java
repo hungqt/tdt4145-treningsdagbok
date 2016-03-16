@@ -330,6 +330,66 @@ public class DBConnector {
 		return categoryList;
 	}
 	
+	public List<List<String>> getExecutedExercises(String date) {
+		List<List<String>> returnList = new ArrayList<List<String>>();
+		List<String> exerciseList = new ArrayList<String>();
+		List<String> resultList = new ArrayList<String>();
+		try {
+			//STEP 2: Register JDBC driver
+		    try {
+				Class.forName("com.mysql.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		    //Make a database connection
+			System.out.println("Connectiing to database...");
+			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			System.out.println("Connected, bitch");
+			
+			//Create a statement
+			System.out.println("Creating a statement");
+			Statement stmt = conn.createStatement();
+			System.out.println("Statement created");
+			
+			//Writing the SQL query
+			System.out.println("SQL stuff");
+			String sql = "SELECT NAME,RESULT FROM EXECUTEDEXERCISE where DATE ='"+date+"'";
+			System.out.println("SQL stuff sucessfull");
+			
+			//Execute the SQL query
+			System.out.println("Before result set");
+			ResultSet rs = stmt.executeQuery(sql);
+			System.out.println("ResultSet sucessfull");
+			
+			//Loop through column to find whatever
+			while(rs.next()){
+				String exercise = rs.getString("NAME");
+				exerciseList.add(exercise);	
+				String result = rs.getString("RESULT");
+				resultList.add(result);
+				System.out.println(exercise);
+				System.out.println(result);
+			}
+
+			
+			returnList.add(exerciseList);
+			returnList.add(resultList);
+			
+			//Clean-up environment
+		    rs.close();
+		    stmt.close();
+		    conn.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return returnList;
+	}
+	
 	
 }
 
