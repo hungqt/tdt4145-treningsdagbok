@@ -56,6 +56,7 @@ public class Main extends Application {
         try {
             // Load user view.
             FXMLLoader loader = new FXMLLoader();
+            System.out.println("Yo");
             loader.setLocation(Main.class.getResource("fxml/Velkommen.fxml"));
             AnchorPane userView = (AnchorPane) loader.load();
 
