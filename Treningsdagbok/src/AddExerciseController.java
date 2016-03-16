@@ -12,15 +12,6 @@ public class AddExerciseController {
 	private TrainingSession trainingSession;
 	// Refererer til Main
 	private Main main;
-		
-	
-	public AddExerciseController(TrainingSession trainingSession){
-		System.out.println("går inn i konstruktør");
-		this.trainingSession = trainingSession;
-		System.out.println("constructor ok");
-		this.main = main;
-		System.out.println("main ok");
-	}
 	
 	DBConnector db = new DBConnector();
 	
@@ -39,7 +30,14 @@ public class AddExerciseController {
 	@FXML
 	private TextField personligForm;
 	
-	public void init(){
+	
+	public void setMain(Main main){
+		this.main = main;
+	}
+	
+	public void init(TrainingSession session){
+		trainingSession = session;
+		System.out.println("Gets here");
 		FillComboBox();
 	}
 	
@@ -48,6 +46,7 @@ public class AddExerciseController {
 		List<String> exercises = db.getExerciseList(); // Need method for adding exercises
 		System.out.println("etter liste-laging");
 		System.out.println(exercises);
+		cmbExercises.getItems().clear();
 		cmbExercises.setValue(exercises.get(0));
 		System.out.println("før for-løkke");
 		for(String exercise: exercises){

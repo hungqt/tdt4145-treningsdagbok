@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
  	DatePicker dato;
  	
  	@FXML
- 	TextField tid; 
+ 	TextField tid;
  	
  	@FXML
  	TextField varighet;
@@ -28,19 +28,20 @@ import javafx.scene.control.TextField;
  	}
  	
  	@FXML
- 	public TrainingSession getTrainingSessionInfo(){
- 		String dateString = dato.toString();
- 		String startTime = tid.toString();
- 		String duration = varighet.toString();
- 		String shape = personligForm.toString();
- 		trainingSession = new TrainingSession(dateString, startTime, duration, shape);
+ 	public TrainingSession getTrainingSessionInfo(TrainingSession session){
+ 		String dateString = dato.getValue().toString();
+ 		String startTime = tid.getText().toString();
+ 		String duration = varighet.getText().toString();
+ 		String shape = personligForm.getText().toString();
+ 		session = new TrainingSession(dateString, startTime, duration, shape);
  		
- 		return trainingSession;
+ 		return session;
  	}
  	
  	@FXML
  	public void showAddExercises(){
  		System.out.println("test");
- 		main.showAddExerciseToSession(getTrainingSessionInfo());
+ 		trainingSession = getTrainingSessionInfo(trainingSession);
+ 		main.showAddExerciseToSession(trainingSession);
  	}
  }
