@@ -30,7 +30,7 @@ public class NyOvelseController {
 	
 	@FXML
 	public void handleTilbake() {
-		
+		main.showVelkommen();
 	}
 	
 	@FXML

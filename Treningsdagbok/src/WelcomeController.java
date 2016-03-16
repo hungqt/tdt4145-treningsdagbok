@@ -24,7 +24,7 @@ public class WelcomeController {
 	
 	@FXML
 	public void handleNyOvelse() {
-		
+		main.showNyOvelse();
 	}
 	
 	@FXML
