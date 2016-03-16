@@ -6,11 +6,13 @@ import java.util.List;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class NyOvelseController {
 	
@@ -57,9 +59,18 @@ public class NyOvelseController {
 	public void handleLagre() {
 		if (DB.setExercise(handleNavn(), handleBeskrivelse(), handleCombo())) {
 			System.out.println("feil");
-			feil.setVisible(true);
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error Dialog");
+			alert.setHeaderText("Error");
+			alert.setContentText("Invalid input!");
+			alert.showAndWait();
 		}
 		else {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Information");
+			alert.setHeaderText(null);
+			alert.setContentText("Exercise was added!");
+			alert.showAndWait();
 			main.showVelkommen();
 		}
 		

@@ -2,10 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class AddExerciseController {
 	
@@ -28,6 +30,9 @@ public class AddExerciseController {
 	private Button btnDone;
 	
 	@FXML
+	private Button btnCancel;
+	
+	@FXML
 	private TextField personligForm;
 	
 	private List<String> exerciseList = new ArrayList<String>();
@@ -42,6 +47,9 @@ public class AddExerciseController {
 		trainingSession = session;
 		System.out.println("Gets here");
 		FillComboBox();
+	}
+	public void cancel(){
+		main.showVelkommen();
 	}
 	
 	public void FillComboBox(){
@@ -71,7 +79,11 @@ public class AddExerciseController {
 		for(int i=0; i<exerciseList.size(); i++){
 			db.setExecutedExercise(exerciseList.get(i), trainingSession.getDate(), trainingSession.getStartTime(), resultList.get(i));
 		}
-		
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Information");
+		alert.setHeaderText(null);
+		alert.setContentText("Session was added!");
+		alert.showAndWait();
 		main.showVelkommen();
 	}
 	
