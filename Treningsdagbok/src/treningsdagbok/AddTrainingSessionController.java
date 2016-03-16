@@ -15,12 +15,15 @@ public class AddTrainingSessionController {
 	@FXML
 	TextField startTime;
 	@FXML
+	TextField duration;
+	@FXML
 	TextField shape;
 	@FXML
 	TextField performance;
 	
 	String dateString;
 	String startTimeString;
+	String durationString;
 	String shapeString;
 	String performanceString;
 	
@@ -36,8 +39,13 @@ public class AddTrainingSessionController {
 		
 		dateString = date.toString();
 		startTimeString = startTime.toString();
+		durationString = duration.toString();
 		shapeString = shape.toString();
 		performanceString = performance.toString();
+	}
+	
+	public void getExercise(){
+		
 	}
 	
 }
