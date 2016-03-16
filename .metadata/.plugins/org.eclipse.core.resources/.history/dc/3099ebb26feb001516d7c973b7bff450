@@ -1,0 +1,26 @@
+package treningsdagbok;
+
+
+import java.util.Date;
+
+import javafx.scene.control.TextField;
+
+public class AddTrainingSessionController {
+	Main main;
+	Date date;		
+	String startTime;
+	String shape;
+	String performance;
+	
+	public void setMain(Main main) {
+	try{
+		this.main = main;
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	
+	public void getTrainingSessionInfo(){
+		TextField startTimeTxt = (TextField) scene.lookup("#startTimeTxt");
+	}
+	
+}

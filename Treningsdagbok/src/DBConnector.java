@@ -11,6 +11,10 @@ public class DBConnector {
 	static final String USER = "thomborr_login";
 	static final String PASS = "12345";
 	
+	public DBConnector(){
+		
+	}
+	
 	public List<String> getExerciseList(){
 		List<String> exerciseList = new ArrayList<String>();
 		
@@ -92,7 +96,7 @@ public class DBConnector {
 		}	
 	}
 	
-	public void setTrainingSession(String date, String startTime, String duration, String shape, String performance, String name){
+	public void setTrainingSession(String date, String startTime, String duration, String note, String form, String performance, String name){
 		try{
 			Class.forName("com.mysql.jdbc.Driver");			
 		} catch (ClassNotFoundException e) {
@@ -111,6 +115,10 @@ public class DBConnector {
 			stmt.setString(1, date);
 			stmt.setString(2, startTime);
 			stmt.setString(3, duration);
+			stmt.setString(4, note);
+			stmt.setString(5, form);
+			stmt.setString(6, performance);
+			stmt.setString(7, name);
 			stmt.executeUpdate();
 			System.out.println("OK");
 			
@@ -191,6 +199,7 @@ public class DBConnector {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+<<<<<<< HEAD:Treningsdagbok/src/DBConnector.java
 
 		
 	}
@@ -202,3 +211,111 @@ public class DBConnector {
 	}
 	
 }
+=======
+	}	
+	
+	public List<String> getTrainingSessionList(){
+		List<String> trainingSessionList = new ArrayList<String>();
+		
+		try {
+			//STEP 2: Register JDBC driver
+		    try {
+				Class.forName("com.mysql.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		    //Make a database connection
+			System.out.println("Connectiing to database...");
+			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			System.out.println("Connected, bitch");
+			
+			//Create a statement
+			System.out.println("Creating a statement");
+			Statement stmt = conn.createStatement();
+			System.out.println("Statement created");
+			
+			//Writing the SQL query
+			System.out.println("SQL stuff");
+			String sql = "SELECT * FROM TRAININGSESSION";
+			System.out.println("SQL stuff sucessfull");
+			
+			//Execute the SQL query
+			System.out.println("Before result set");
+			ResultSet rs = stmt.executeQuery(sql);
+			System.out.println("ResultSet sucessfull");
+			
+			//Loop through column to find whatever
+			while(rs.next()){
+				String trainingSession = rs.getString("DATE");
+				trainingSessionList.add(trainingSession);	
+			}
+			
+			//Clean-up environment
+		    rs.close();
+		    stmt.close();
+		    conn.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return trainingSessionList;
+		
+	}
+	
+	public List<String> getExecutedExercise(String date){
+		List<String> trainingSessionList = new ArrayList<String>();
+		
+		try {
+			//STEP 2: Register JDBC driver
+		    try {
+				Class.forName("com.mysql.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		    //Make a database connection
+			System.out.println("Connectiing to database...");
+			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			System.out.println("Connected, bitch");
+			
+			//Create a statement
+			System.out.println("Creating a statement");
+			Statement stmt = conn.createStatement();
+			System.out.println("Statement created");
+			
+			//Writing the SQL query
+			System.out.println("SQL stuff");
+			String sql = "SELECT * FROM T";
+			System.out.println("SQL stuff sucessfull");
+			
+			//Execute the SQL query
+			System.out.println("Before result set");
+			ResultSet rs = stmt.executeQuery(sql);
+			System.out.println("ResultSet sucessfull");
+			
+			//Loop through column to find whatever
+			while(rs.next()){
+				String trainingSession = rs.getString("DATE");
+				trainingSessionList.add(trainingSession);	
+			}
+			
+			//Clean-up environment
+		    rs.close();
+		    stmt.close();
+		    conn.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return trainingSessionList;
+		
+	}
+}
+>>>>>>> b3d88cc76540ef5e7022f91112f1cc5fbc194a75:Treningsdagbok/src/treningsdagbok/DBConnector.java

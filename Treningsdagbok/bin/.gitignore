@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /mainPack/
 /fxml/
 /treningsdagbok/
@@ -9,3 +10,7 @@
 /DBConnector.class
 /deleteExerciseController.class
 /showSessionsController.class
+=======
+/fxml/
+/treningsdagbok/
+>>>>>>> b3d88cc76540ef5e7022f91112f1cc5fbc194a75
