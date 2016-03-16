@@ -25,18 +25,13 @@ public class Main extends Application {
         
         initRootLayout();   
         
-        showVelkommen();
         
     }
     
     public void initRootLayout(){
     	try {
-    		System.out.println("3");
-            // Load root layout from fxml file.
-            FXMLLoader loader = new FXMLLoader();
-            System.out.println(4);
-            loader.setLocation(Main.class.getResource("fxml/RootLayout.fxml"));
-            System.out.println(5);
+    		FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("fxml.RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
             
             

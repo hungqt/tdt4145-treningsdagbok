@@ -1,7 +1,15 @@
 package treningsdagbok;
+/*
+ * Opprettet 22.09, Henrik 
+ * Denne klassen styrer rootlayouten (der alle andre scener blir lagt oppå)
+ * Kontrollerer menyen
+ */
+
+
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Menu;
+import treningsdagbok.Main;
 
 public class RootLayoutController {
 	
@@ -23,4 +31,3 @@ public class RootLayoutController {
     }
 	
 }
-
