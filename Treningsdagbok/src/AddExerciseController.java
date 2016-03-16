@@ -1,47 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 public class AddExerciseController {
 	
 	@FXML
-	private Button btnLegOv;
+	private ComboBox<String> cmbExercises;
 	
 	@FXML
-	private DatePicker dato;
+	private TextField comment;
 	
 	@FXML
-	private TextField tid;
-	
-	@FXML
-	private TextField varighet;
+	private Button btnDone;
 	
 	@FXML
 	private TextField personligForm;
 	
-	@FXML
-	public void handleLeggTilÿvelse() {
-		
+	public void FillComboBox(){
+		List<String> exercises = new ArrayList<String>(); // Need method for adding exercises
+		cmbExercises.getItems().clear();
+		for(String exercise: exercises){
+			cmbExercises.getItems().add(exercise);
+		}
 	}
 	
-	@FXML
-	public void handleDato(){
-		
-	}
 	
-	@FXML
-	public void handleTid(){
-		
-	}
-	
-	@FXML
-	public void handleVarighet(){
-		
-	}
-	
-	@FXML
-	public void handlePersonligForm() {
-		
-	}
 }
