@@ -67,7 +67,7 @@ public class DBConnector {
 		
 	}
 	
-	public void setExercise(String name, String description, String category){
+	public boolean setExercise(String name, String description, String category){
 		try{
 			Class.forName("com.mysql.jdbc.Driver");			
 		} catch (ClassNotFoundException e) {
@@ -88,11 +88,13 @@ public class DBConnector {
 			stmt.setString(3, category);
 			stmt.executeUpdate();
 			System.out.println("OK");
+			return (false);
 			
 		} catch (SQLException e) {
 			System.out.println("exist");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return (true);
 		}	
 	}
 	

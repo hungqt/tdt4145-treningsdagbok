@@ -85,6 +85,7 @@ public class Main extends Application {
 	    //Kobler UserViewController med Main
 	        NyOvelseController controller = loader.getController();
 	        controller.setMain(this);
+	        controller.init();
 	        
 	    } catch (IOException e) {
 	        e.printStackTrace();
