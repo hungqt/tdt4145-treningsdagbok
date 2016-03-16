@@ -34,6 +34,7 @@ public class WelcomeController {
 	
 	@FXML
 	public void handleTidligereTreningsokter() {
+		main.showVisTrening();
 		
 	}
 	
