@@ -87,6 +87,7 @@ public class DBConnector {
 			System.out.println("OK");
 			
 		} catch (SQLException e) {
+			System.out.println("exist");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
@@ -196,7 +197,7 @@ public class DBConnector {
 		DBConnector test = new DBConnector();
 //		test.deleteExercise("asd");
 //		System.out.println(test.getExerciseList());
-		//test.setExercise("Biceps curl", "curls for the gurls", "Styrketrening");
+		test.setExercise("Biceps curl", "curls for the gurls", "Styrketrening");
 	
 	}
 	
