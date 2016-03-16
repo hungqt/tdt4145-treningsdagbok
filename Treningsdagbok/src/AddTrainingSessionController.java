@@ -21,7 +21,10 @@ import javafx.scene.control.TextField;
  	TextField personligForm;
  	
  	@FXML
- 	Button btnLegOv;	
+ 	Button btnLegOv;
+ 	
+ 	@FXML
+ 	Button btnCancel;
  	
  	public void setMain(Main main){
  		this.main = main;
@@ -36,6 +39,10 @@ import javafx.scene.control.TextField;
  		session = new TrainingSession(dateString, startTime, duration, shape);
  		
  		return session;
+ 	}
+ 	@FXML
+ 	public void cancel(){
+ 		main.showVelkommen();
  	}
  	
  	@FXML
