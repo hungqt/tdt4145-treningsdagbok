@@ -30,8 +30,9 @@ public class AddExerciseController {
 	@FXML
 	private TextField personligForm;
 	
-	private List<String> exerciseList;
-	private List<String> resultList;
+	private List<String> exerciseList = new ArrayList<String>();
+	
+	private List<String> resultList = new ArrayList<String>();
 	
 	public void setMain(Main main){
 		this.main = main;
@@ -57,12 +58,14 @@ public class AddExerciseController {
 		System.out.println("etter for-løkke");
 	}
 	
+	@FXML
 	public void anotherExercise(){
-		exerciseList.add(cmbExercises.getValue().toString());
+		System.out.println(cmbExercises.getValue() + "value");
+		exerciseList.add((String) cmbExercises.getValue());
 		resultList.add(comment.getText().toString());
 		comment.setText("");
 	}
-	
+	@FXML
 	public void sendInSession(){
 		db.setTrainingSession(trainingSession.getDate(), trainingSession.getStartTime(), trainingSession.getDuration(), null, trainingSession.getShape(), null, null);
 		for(int i=0; i<exerciseList.size(); i++){
