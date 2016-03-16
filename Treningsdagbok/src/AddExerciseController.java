@@ -20,7 +20,6 @@ public class AddExerciseController {
 		System.out.println("constructor ok");
 		this.main = main;
 		System.out.println("main ok");
-		this.init();
 	}
 	
 	DBConnector db = new DBConnector();
