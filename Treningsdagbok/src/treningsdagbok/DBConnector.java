@@ -120,6 +120,34 @@ public class DBConnector {
 		}
 	}
 	
+	public void setExecutedExercise(String name, String date, String startTime, String results){
+		try{
+			Class.forName("com.mysql.jdbc.Driver");			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try{
+			System.out.println("Connectiing to database...");
+			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			System.out.println("Connected, bitch");
+			
+			System.out.println("Creating a statement");
+			PreparedStatement stmt = (PreparedStatement) conn.prepareStatement("insert into EXECUTEDEXERCISE(NAME, DATE, TIME, RESULT) values(?,?,?,?)");
+			System.out.println("Statement created");
+			
+			stmt.setString(1, name);
+			stmt.setString(2, date);
+			stmt.setString(3, startTime);
+			stmt.setString(4, results);
+			stmt.executeUpdate();	
+			System.out.println("OK");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	public static void main(String[] args) {
 		DBConnector test = new DBConnector();
 		System.out.println(test.getExerciseList());
