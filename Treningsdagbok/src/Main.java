@@ -56,6 +56,7 @@ public class Main extends Application {
         try {
             // Load user view.
             FXMLLoader loader = new FXMLLoader();
+            System.out.println("Yo");
             loader.setLocation(Main.class.getResource("fxml/Velkommen.fxml"));
             AnchorPane userView = (AnchorPane) loader.load();
 
@@ -91,6 +92,23 @@ public class Main extends Application {
 	        e.printStackTrace();
 	    }
 	}
+	public void showDeleteExercise(){
+		
+	    try {
+	        // Load user view.
+		    FXMLLoader loader = new FXMLLoader();
+		    loader.setLocation(Main.class.getResource("fxml/deleteExercise.fxml"));
+		    AnchorPane userView = (AnchorPane) loader.load();
+		    System.out.println("Hello");
+		    
+		    deleteExerciseController controller = loader.getController();
+		    controller.setMain(this);
+		    controller.init();
+	    	}
+	    catch(Exception e){
+	    	e.printStackTrace();
+	    	}
+		}
 	
 	public void showAddTrainingSession(){
 	    try {
@@ -127,7 +145,6 @@ public class Main extends Application {
 		    AddExerciseController controller = new AddExerciseController(TS);
 		    
 		    controller = loader.getController();
-		    
 	        
 	    } catch (IOException e) {
 	        e.printStackTrace();

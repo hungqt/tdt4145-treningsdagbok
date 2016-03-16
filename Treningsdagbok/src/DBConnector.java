@@ -172,7 +172,7 @@ public class DBConnector {
 			}
 			
 		    //Make a database connection
-			System.out.println("Connectiing to database...");
+			System.out.println("Connecting to database...");
 			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
 			System.out.println("Connected, bitch");
 			
@@ -209,12 +209,16 @@ public class DBConnector {
 			boolean inSide = false;
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
-				Connection con = DriverManager.getConnection("jdbc:mysql://mysql.stud.ntnu.no/thomborr_bruker","thomborr_login","12345");
+				Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
 				PreparedStatement statement = (PreparedStatement) con.prepareStatement("SELECT name FROM EXECUTEDEXERCISE WHERE name = ?");
 				statement.setString(1, exercise);
 				ResultSet result = statement.executeQuery();
 				if(result.first()){
 					inSide = true;
+					System.out.println("In session");
+				}
+				else{
+					System.out.println("Not in session");
 				}
 				con.close();
 			} catch (Exception e) {
