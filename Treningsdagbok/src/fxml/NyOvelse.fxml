@@ -44,5 +44,11 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <ComboBox fx:id="cat" layoutX="567.0" layoutY="276.0" prefWidth="150.0" />
+      <Label fx:id="feil" layoutX="140.0" layoutY="158.0" text="Det skjedde en feil" textFill="#f50707" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
