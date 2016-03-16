@@ -1,1 +1,11 @@
+/mainPack/
+/fxml/
 /treningsdagbok/
+/Main.class
+/NyOvelseController.class
+/RootLayoutController.class
+/WelcomeController.class
+/AddExerciseController.class
+/DBConnector.class
+/deleteExerciseController.class
+/showSessionsController.class

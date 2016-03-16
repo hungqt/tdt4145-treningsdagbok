@@ -1,4 +1,4 @@
-package treningsdagbok;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -23,7 +23,7 @@ public class WelcomeController {
 	}
 	
 	@FXML
-	public void handleNyOving() {
+	public void handleNyOvelse() {
 		
 	}
 	
