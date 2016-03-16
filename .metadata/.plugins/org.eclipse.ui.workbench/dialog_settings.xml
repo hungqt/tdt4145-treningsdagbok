@@ -18,4 +18,6 @@
 			<item value="org.eclipse.fx.ide"/>
 		</list>
 	</section>
+	<section name="ImportExportAction">
+	</section>
 </section>

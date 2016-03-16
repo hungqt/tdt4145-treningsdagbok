@@ -1,0 +1,66 @@
+import java.sql.*;
+
+public class DBConnector {
+	//JDBC name and database URL
+	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+	static final String DB_URL = "jdbc:mysql://mysql.stud.ntnu.no/thomborr_trening";
+	
+	//Database credentials
+	static final String USER = "thomborr_login";
+	static final String PASS = "12345";
+	
+	public void getExercise(){
+		try {
+			//STEP 2: Register JDBC driver
+		    try {
+				Class.forName("com.mysql.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			System.out.println("Connectiing to database...");
+			Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			System.out.println("Connected, bitch");
+			
+			System.out.println("Creating a statement");
+			Statement stmt = conn.createStatement();
+			System.out.println("Statement created");
+			
+			System.out.println("SQL stuff");
+			String sql = "SELECT * FROM EXCERCISE";
+			System.out.println("SQL stuff sucessfull");
+			
+			System.out.println("Before result set");
+			ResultSet rs = stmt.executeQuery(sql);
+			System.out.println("ResultSet sucessfull");
+			
+			while(rs.next()){
+				System.out.println("Before get exercise");
+				String exerciseName = rs.getString("NAME");
+				System.out.println(exerciseName);
+				System.out.println("getting name sucessfull");	
+			}
+			
+			//Clean-up environment
+		    rs.close();
+		    stmt.close();
+		    conn.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void setExercise(String name, String description, String category){
+		
+	}
+	
+	public static void main(String[] args) {
+		DBConnector test = new DBConnector();
+		test.getExercise();
+	}
+	
+}
