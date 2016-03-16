@@ -87,6 +87,7 @@ public class DBConnector {
 			System.out.println("OK");
 			
 		} catch (SQLException e) {
+			System.out.println("exist");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
@@ -191,6 +192,5 @@ public class DBConnector {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-	
+	}	
 }
