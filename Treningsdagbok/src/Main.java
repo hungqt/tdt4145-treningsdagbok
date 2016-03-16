@@ -122,6 +122,7 @@ public class Main extends Application {
 		    loader.setLocation(Main.class.getResource("fxml/deleteExercise.fxml"));
 		    AnchorPane userView = (AnchorPane) loader.load();
 		    System.out.println("Hello");
+		    rootLayout.setCenter(userView);
 		    
 		    deleteExerciseController controller = loader.getController();
 		    controller.setMain(this);
