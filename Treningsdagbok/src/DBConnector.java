@@ -8,8 +8,8 @@ public class DBConnector {
 	static final String DB_URL = "jdbc:mysql://mysql.stud.ntnu.no/thomborr_trening";
 	
 	//Database credentials
-	static final String USER = "thomborr_login";
-	static final String PASS = "12345";
+	static final String USER = "YOUR_USERNAME";
+	static final String PASS = "YOUR_PASSWORD";
 	
 	public DBConnector(){
 		
